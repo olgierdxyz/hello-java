@@ -17,12 +17,11 @@ pipeline {
         pollSCM('H 3-5 * * *')
         // Start a pipeline at some time
         cron('H H(5-6) * * *')
-        //
     }
     stages {
         stage('Build') {
             steps {
-                sh "mvn -Dmaven.test.failure.ignore=true -Dmaven.color=false clean package"
+                sh "mvn -Dmaven.test.failure.ignore=true clean compile package"
             }
             post {
                 success {
