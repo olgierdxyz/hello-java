@@ -14,9 +14,7 @@ pipeline {
     }
     triggers {
         githubPush()
-        // Scan for SCM changes
-        pollSCM('H 3-5 * * *')
-        // Start a pipeline at some time
+        pollSCM('H H(3-5) * * *')
         cron('H H(5-6) * * *')
     }
     stages {
