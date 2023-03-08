@@ -1,7 +1,7 @@
 pipeline {
     agent any
     options {
-        buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
+        buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '10')
         ansiColor('xterm')
     }
     tools {
@@ -9,6 +9,10 @@ pipeline {
     }
     triggers {
         githubPush()
+        // Scan for SCM changes
+        pollSCM('H 3 * * *')
+        // Start a pipeline at some time
+        cron('H H(4,6) * * *')
     }
     stages {
         stage('Build') {
