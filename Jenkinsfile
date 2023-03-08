@@ -1,6 +1,7 @@
 pipeline {
     agent any
     options {
+        disableConcurrentBuilds abortPrevious: true
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '10')
         ansiColor('xterm')
     }
