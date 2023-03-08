@@ -5,7 +5,7 @@ pipeline {
         timeout(time: 1, unit: 'MINUTES')
         disableConcurrentBuilds abortPrevious: true
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '10')
-        timestamps
+        timestamps()
         ansiColor('xterm')
     }
     tools {
