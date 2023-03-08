@@ -2,6 +2,7 @@ pipeline {
     agent any
     options {
         ansiColor('xterm')
+        buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
     }
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
