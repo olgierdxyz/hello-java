@@ -1,8 +1,9 @@
 pipeline {
     agent any
     options {
-        retry(0)
         timeout(time: 1, unit: 'MINUTES')
+        quietPeriod(0)
+        retry(0)
         disableConcurrentBuilds abortPrevious: true
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '10')
         timestamps()
