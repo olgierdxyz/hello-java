@@ -1,3 +1,5 @@
+// language: groovy
+
 pipeline {
     agent any
     options {
