@@ -21,7 +21,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "mvn -Dmaven.test.failure.ignore=true clean compile package"
+                lock('hello-java-build-lock') {                    
+                    sh "mvn -Dmaven.test.failure.ignore=true clean compile package"
+                }
             }
             post {
                 success {
