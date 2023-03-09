@@ -14,8 +14,8 @@ pipeline {
     }
     triggers {
         githubPush()
-        pollSCM('H H(3-5) * * *')
-        cron('H H(5-6) * * *')
+        //pollSCM('H H(3-5) * * *')
+        //cron('H H(5-6) * * *')
         //
     }
     stages {
