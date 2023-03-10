@@ -7,7 +7,7 @@ pipeline {
         //disableConcurrentBuilds abortPrevious: true
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
         timestamps()
-        ansiColor('xterm')
+        //ansiColor('xterm')
     }
     tools {
         maven "M3"
