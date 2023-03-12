@@ -22,7 +22,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                step {
+                step('Build') {
                     //lock('hello-java-build-lock') {                    
                         //sh "mvn -Dmaven.test.failure.ignore=true clean compile package"
                     timestamps {
