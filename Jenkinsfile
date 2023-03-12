@@ -22,13 +22,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                //lock('hello-java-build-lock') {                    
-                    //sh "mvn -Dmaven.test.failure.ignore=true clean compile package"
-                timestamps {
-                    //sh "mvn clean compile package"
-                    sh "gradle clean classes build"
+                step {
+                    //lock('hello-java-build-lock') {                    
+                        //sh "mvn -Dmaven.test.failure.ignore=true clean compile package"
+                    timestamps {
+                        //sh "mvn clean compile package"
+                        sh "gradle clean classes build"
+                    }
                 }
-                //}
             }
             post {
                 success {
