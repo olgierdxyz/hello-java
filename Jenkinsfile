@@ -11,6 +11,7 @@ pipeline {
     }
     tools {
         maven "M3"
+        gradle "G8"
     }
     triggers {
         githubPush()
