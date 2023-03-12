@@ -40,3 +40,29 @@ target/
 *.iml
 .idea/
 out/
+
+###
+# Gradle specific
+.gradle
+/build/
+
+# IntelliJ specific
+*.iml
+.idea/
+.idea_modules/
+*.ipr
+*.iws
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Maven specific
+target/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
