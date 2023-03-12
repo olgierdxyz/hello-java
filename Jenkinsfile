@@ -16,7 +16,7 @@ pipeline {
         githubPush()
         //pollSCM('H H(3-5) * * *')
         //cron('H H(5-6) * * *')
-        ////////
+        //
     }
     stages {
         stage('Build') {
