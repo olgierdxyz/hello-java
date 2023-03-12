@@ -6,7 +6,7 @@ pipeline {
         retry(0)
         //disableConcurrentBuilds abortPrevious: true
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
-        timestamps()
+        //timestamps()
         ansiColor('xterm')
     }
     tools {
@@ -23,7 +23,9 @@ pipeline {
             steps {
                 //lock('hello-java-build-lock') {                    
                     //sh "mvn -Dmaven.test.failure.ignore=true clean compile package"
-                    sh "mvn clean compile package"                    
+                timestamp {
+                    sh "mvn clean compile package"
+                }
                 //}
             }
             post {
