@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     options {
         timeout(time: 1, unit: 'MINUTES')
         quietPeriod(1)
@@ -9,6 +8,10 @@ pipeline {
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
         //timestamps()
         ansiColor('xterm')
+    }
+    environment {
+        TIMEZONE = "Europe/Warsaw"
+        TIMEZONE_DS = "${TIMEZONE}_daylight_savings"
     }
     tools {
         maven "M3"
