@@ -18,7 +18,8 @@ pipeline {
     tools {
         //maven "M3"
         gradle "G8"
-        tool name: 'my-docker-debian-11', type: 'dockerTool'
+        dockerTool "my-docker-debian-11"
+        //tool name: 'my-docker-debian-11', type: 'dockerTool'
         //tool name: 'my-docker-centos-8', type: 'dockerTool'
     }
     triggers {
