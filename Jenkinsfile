@@ -60,13 +60,13 @@ pipeline {
         }
         */
         
-        /*
+
         stage('Prepare environment') {
             agent {
-                label 'debian'
+                label 'deb'
             }
             steps {
-                tool 'docker', 'my-docker-debian-11'
+                tool 'docker'
                 sh 'systemctl start docker'
             }
         }
@@ -96,6 +96,6 @@ pipeline {
                 }
             }
         }
-        */
+
     }
 }
