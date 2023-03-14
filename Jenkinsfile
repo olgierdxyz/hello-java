@@ -39,8 +39,9 @@ pipeline {
         stage('Build with Docker') {
             agent {
                 docker {
-                    image 'docker.io/library/gradle'
-                    reuseNode true
+                    image 'gradle:latest'
+                    args '--user 1000:1000'
+                    //reuseNode true
                 }
             }
             steps {
