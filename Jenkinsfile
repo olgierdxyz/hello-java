@@ -31,7 +31,7 @@ pipeline {
     stages {
         stage('Test git') {
             agent {
-                label 'debian'
+                label 'deb'
             }
             //tools {
             //    git 'git'
