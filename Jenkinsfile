@@ -27,13 +27,15 @@ pipeline {
         githubPush()
         //pollSCM('H H(3-5) * * *')
         //cron('H H(5-6) * * *')
-        //
     }
     stages {
-        agent {
-            label 'debianx'
-        }
         stage('Test git') {
+            agent {
+                label 'debian'
+            }
+            tools {
+                git 'git-deb-distro'
+            }
             steps {
                 git 'https://github.com/olgierdxyz/hello-html.git'
             }
