@@ -1,12 +1,6 @@
 pipeline {
-    //agent any
-                agent {
-                docker {
-                    image 'gradle:latest'
-                    //args '--user 1000:1000'
-                    reuseNode true
-                }
-            }
+    agent any
+
     options {
         timeout(time: 1, unit: 'MINUTES')
         quietPeriod(1)
@@ -46,14 +40,24 @@ pipeline {
         }
         */
         stage('Build with Docker') {
-
+            agent {
+                docker {
+                    image 'gradle:latest'
+                    //args '--user 1000:1000'
+                    //reuseNode true
+                }
+            }
             steps {
                 //lock('hello-java-build-lock') {                    
                     //sh "mvn -Dmaven.test.failure.ignore=true clean compile package"
-                timestamps {
+                //timestamps {
                     //sh "mvn clean compile package"
                     sh "gradle clean classes build"
-                }
+                //}
+            }
+            post {
+                success {
+                    archiveArtifacts artifacts: 'build/libs/*.jar', fingerprint: true
             }
         }
     }
