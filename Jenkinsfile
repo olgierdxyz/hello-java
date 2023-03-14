@@ -16,7 +16,7 @@ pipeline {
     }
     // "Tools" directive requires agent other than "none". Othervise has no effect.
     tools {
-        dockerTool "my-docker-debian-11"
+        //dockerTool "my-docker-debian-11"
         //maven "M3"
         gradle "G8"
         //dockerTool "my-docker-debian-11"
@@ -30,6 +30,13 @@ pipeline {
         //
     }
     stages {
+        stage('Test git') {
+            steps {
+                git 'https://github.com/olgierdxyz/hello-html.git'
+            }
+        }
+        
+        
         /*
         stage('Build') {
             steps {
@@ -48,12 +55,14 @@ pipeline {
             }
         }
         */
+        
+        /*
         stage('Prepare environment') {
             agent {
                 label 'debianx'
             }
             steps {
-                tool 'docker'
+                tool 'docker', 'my-docker-debian-11'
                 sh 'systemctl start docker'
             }
         }
@@ -83,5 +92,6 @@ pipeline {
                 }
             }
         }
+        */
     }
 }
