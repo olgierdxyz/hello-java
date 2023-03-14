@@ -57,7 +57,8 @@ pipeline {
             }
             post {
                 success {
-                    archiveArtifacts artifacts: 'build/libs/*.jar', fingerprint: true
+                    stash 'artifacts': include: 'build/libs/*.jar'
+                    //archiveArtifacts artifacts: 'build/libs/*.jar', fingerprint: true
                 }
             }
         }
