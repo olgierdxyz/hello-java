@@ -30,7 +30,9 @@ pipeline {
         //
     }
     stages {
-        agent 'debianx'
+        agent {
+            label 'debianx'
+        }
         stage('Test git') {
             steps {
                 git 'https://github.com/olgierdxyz/hello-html.git'
