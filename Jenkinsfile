@@ -48,6 +48,15 @@ pipeline {
             }
         }
         */
+        stage('Prepare environment') {
+            agent {
+                label 'debianx'
+            }
+            steps {
+                tool 'docker'
+                sh 'systemctl start docker'
+            }
+        }
         stage('Build with Docker') {
             //tools {
             //    dockerTool "my-docker-debian-11"
