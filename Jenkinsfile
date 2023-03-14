@@ -44,7 +44,7 @@ pipeline {
                 docker {
                     image 'gradle:latest'
                     //args '--user 1000:1000'
-                    //reuseNode true
+                    reuseNode true
                 }
             }
             steps {
