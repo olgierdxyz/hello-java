@@ -2,7 +2,7 @@ pipeline {
     agent none
     options {
         timeout(time: 1, unit: 'MINUTES')
-        quietPeriod(1)
+        //quietPeriod(1)
         retry(0)
         //disableConcurrentBuilds abortPrevious: true
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
@@ -15,14 +15,14 @@ pipeline {
         //ADMIN_USER = credentials('admin-user')
     }
     // "Tools" directive requires agent other than "none". Othervise has no effect.
-    tools {
+    //tools {
         //dockerTool "my-docker-debian-11"
         //maven "M3"
-        gradle "G8"
+        //gradle "G8"
         //dockerTool "my-docker-debian-11"
         //tool name: 'my-docker-debian-11', type: 'dockerTool'
         //tool name: 'my-docker-centos-8', type: 'dockerTool'
-    }
+    //}
     triggers {
         githubPush()
         //pollSCM('H H(3-5) * * *')
@@ -64,7 +64,7 @@ pipeline {
         /*
         stage('Prepare environment') {
             agent {
-                label 'debianx'
+                label 'debian'
             }
             steps {
                 tool 'docker', 'my-docker-debian-11'
