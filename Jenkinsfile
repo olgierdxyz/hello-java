@@ -18,7 +18,7 @@ pipeline {
     tools {
         //maven "M3"
         gradle "G8"
-        dockerTool "my-docker-debian-11"
+        //dockerTool "my-docker-debian-11"
         //tool name: 'my-docker-debian-11', type: 'dockerTool'
         //tool name: 'my-docker-centos-8', type: 'dockerTool'
     }
@@ -54,6 +54,9 @@ pipeline {
                     //args '--user 1000:1000'
                     reuseNode true
                 }
+            }
+            tools {
+                dockerTool "my-docker-debian-11"
             }
             steps {
                 //lock('hello-java-build-lock') {                    
