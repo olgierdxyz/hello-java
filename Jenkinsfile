@@ -64,7 +64,7 @@ pipeline {
         /*
         stage('Prepare environment') {
             agent {
-                label 'debianx'
+                label 'debian'
             }
             steps {
                 tool 'docker', 'my-docker-debian-11'
