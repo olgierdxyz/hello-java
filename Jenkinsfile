@@ -12,6 +12,7 @@ pipeline {
     environment {
         TIMEZONE = "Europe/Warsaw"
         TIMEZONE_DS = "${TIMEZONE}_daylight_savings"
+        //ADMIN_USER = credentials('admin-user')
     }
     tools {
         maven "M3"
