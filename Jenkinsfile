@@ -16,6 +16,7 @@ pipeline {
     }
     // "Tools" directive requires agent other than "none". Othervise has no effect.
     tools {
+        dockerTool "my-docker-debian-11"
         //maven "M3"
         gradle "G8"
         //dockerTool "my-docker-debian-11"
@@ -48,9 +49,9 @@ pipeline {
         }
         */
         stage('Build with Docker') {
-            tools {
-                dockerTool "my-docker-debian-11"
-            }
+            //tools {
+            //    dockerTool "my-docker-debian-11"
+            //}
             agent {
                 docker {
                     image 'gradle:latest'
