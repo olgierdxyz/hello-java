@@ -48,15 +48,15 @@ pipeline {
         }
         */
         stage('Build with Docker') {
+            tools {
+                dockerTool "my-docker-debian-11"
+            }
             agent {
                 docker {
                     image 'gradle:latest'
                     //args '--user 1000:1000'
                     reuseNode true
                 }
-            }
-            tools {
-                dockerTool "my-docker-debian-11"
             }
             steps {
                 //lock('hello-java-build-lock') {                    
