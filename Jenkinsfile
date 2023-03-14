@@ -1,5 +1,12 @@
 pipeline {
-    agent any
+    //agent any
+                agent {
+                docker {
+                    image 'gradle:latest'
+                    //args '--user 1000:1000'
+                    reuseNode true
+                }
+            }
     options {
         timeout(time: 1, unit: 'MINUTES')
         quietPeriod(1)
@@ -39,13 +46,7 @@ pipeline {
         }
         */
         stage('Build with Docker') {
-            agent {
-                docker {
-                    image 'gradle:latest'
-                    args '--user 1000:1000'
-                    //reuseNode true
-                }
-            }
+
             steps {
                 //lock('hello-java-build-lock') {                    
                     //sh "mvn -Dmaven.test.failure.ignore=true clean compile package"
