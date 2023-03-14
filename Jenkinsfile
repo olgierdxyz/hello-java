@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     options {
         timeout(time: 1, unit: 'MINUTES')
         quietPeriod(1)
@@ -14,9 +14,12 @@ pipeline {
         TIMEZONE_DS = "${TIMEZONE}_daylight_savings"
         //ADMIN_USER = credentials('admin-user')
     }
+    // "Tools" directive requires agent other than "none". Othervise has no effect.
     tools {
-        maven "M3"
+        //maven "M3"
         gradle "G8"
+        tool name: 'my-docker-debian-11', type: 'dockerTool'
+        //tool name: 'my-docker-centos-8', type: 'dockerTool'
     }
     triggers {
         githubPush()
