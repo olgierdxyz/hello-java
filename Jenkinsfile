@@ -33,9 +33,9 @@ pipeline {
             agent {
                 label 'debian'
             }
-            tools {
-                git 'git'
-            }
+            //tools {
+            //    git 'git'
+            //}
             steps {
                 git 'https://github.com/olgierdxyz/hello-html.git'
             }
