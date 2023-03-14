@@ -34,7 +34,7 @@ pipeline {
                 label 'debian'
             }
             tools {
-                git 'git-deb-distro'
+                git 'git'
             }
             steps {
                 git 'https://github.com/olgierdxyz/hello-html.git'
