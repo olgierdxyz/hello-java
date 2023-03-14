@@ -57,7 +57,7 @@ pipeline {
             }
             post {
                 success {
-                    stash 'artifacts': include: 'build/libs/*.jar'
+                    stash name: 'artifacts', includes: 'build/libs/*.jar'
                     //archiveArtifacts artifacts: 'build/libs/*.jar', fingerprint: true
                 }
             }
