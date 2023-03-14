@@ -50,7 +50,7 @@ pipeline {
                     //sh "mvn clean compile package"
                     sh "gradle clean classes build"
                 }
-                //}
             }
+        }
     }
 }
