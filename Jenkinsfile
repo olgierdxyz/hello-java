@@ -20,6 +20,7 @@ pipeline {
         //
     }
     stages {
+        /*
         stage('Build') {
             steps {
                 //lock('hello-java-build-lock') {                    
@@ -36,6 +37,7 @@ pipeline {
                 }
             }
         }
+        */
         stage('Build with Docker') {
             agent {
                 docker {
