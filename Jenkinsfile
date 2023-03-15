@@ -33,9 +33,10 @@ pipeline {
             agent {
                 label 'deb'
             }
-            //tools {
+            tools {
             //    git 'git'
-            //}
+                git 'git-default'
+            }
             steps {
                 git 'https://github.com/olgierdxyz/hello-html.git'
             }
@@ -65,7 +66,7 @@ pipeline {
                 label 'deb'
             }
             steps {
-                tool 'docker'
+                tool 'docker'   // working!
                 //tool 'myDocker'
                 //tool name: 'myDocker', type: 'dockerTool'
                 //sh 'systemctl unmask docker'
