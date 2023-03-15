@@ -70,7 +70,7 @@ pipeline {
 
             tools {
                 //dockerTool 'docker-default'
-                docker 'docker-default'
+                dockerTool 'docker-default'
             }
 
             steps {
