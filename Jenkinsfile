@@ -82,14 +82,15 @@ pipeline {
                 //tool name: 'docker-default', type: 'dockerTool'
                 //tool name: 'docker-default', type: 'dockerTool'
                 //tool 'dockerTool'
-                tool 'docker-default'
+                //tool 'docker-default'
                 //tool 'docker'   // working!
                 //tool 'myDocker'
                 //tool name: 'myDocker', type: 'dockerTool'
                 //sh 'systemctl unmask docker'
                 //sh 'systemctl enable docker'
                 //sh 'systemctl start docker'
-                 echo 'Should be after installation of missing docker ################'
+                sh 'docker --version'
+                echo 'Should be after installation of missing docker ################'
 
             }
 
