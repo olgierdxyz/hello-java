@@ -68,7 +68,7 @@ pipeline {
                 label 'deb'
             }
             tools {
-                docker 'docker-default'
+                dockerTool 'docker-default'
             }
 
             steps {
