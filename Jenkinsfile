@@ -1,7 +1,7 @@
 pipeline {
     agent none
     options {
-        timeout(time: 1, unit: 'MINUTES')
+        timeout(time: 5, unit: 'MINUTES')
         //quietPeriod(1)
         retry(0)
         //disableConcurrentBuilds abortPrevious: true
