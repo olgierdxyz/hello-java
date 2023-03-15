@@ -67,7 +67,8 @@ pipeline {
             steps {
                 echo 'Doing nothing'
                 //tool name: 'Default', type: 'dockerTool'
-                //sh 'systemctl start docker'
+                tool 'docker'
+                sh 'systemctl start docker'
             }
         }
         stage('Build with Docker') {
