@@ -69,7 +69,8 @@ pipeline {
             }
 
             tools {
-                dockerTool 'docker-default'
+                //dockerTool 'docker-default'
+                docker 'docker-default'
             }
 
             steps {
