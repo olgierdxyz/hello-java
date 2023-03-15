@@ -62,7 +62,7 @@ pipeline {
         }
         */
 
-        /*
+
         stage('Prepare environment') {
             agent {
                 label 'deb'
@@ -78,7 +78,7 @@ pipeline {
             }
 
         }
-        */
+
         stage('Build with Docker') {
             //tools {
             //    dockerTool "my-docker-debian-11"
