@@ -65,7 +65,8 @@ pipeline {
                 label 'deb'
             }
             steps {
-                tool 'myDocker'
+                tool 'docker'
+                //tool 'myDocker'
                 //tool name: 'myDocker', type: 'dockerTool'
                 //sh 'systemctl unmask docker'
                 //sh 'systemctl enable docker'
