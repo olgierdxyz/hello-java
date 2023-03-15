@@ -38,7 +38,7 @@ pipeline {
             //    git 'git-default'
             //}
             steps {
-                tool 'git-default'
+                //tool 'git-default'
                 git 'https://github.com/olgierdxyz/hello-html.git'
             }
         }
