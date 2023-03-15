@@ -73,9 +73,10 @@ pipeline {
             }
             */
             steps {
-                echo 'Should be after installation of missing docker ################'
+                echo 'Should be before installation of missing docker ################'
                 //tool 'docker'
-                tool name: 'docker-default', type: 'docker'
+                //tool name: 'docker-default', type: 'docker'             // it works
+                tool name: 'docker', type: 'docker-default'
                 //tool name: 'docker-default', type: 'dockerTool'
                 //tool name: 'docker-default', type: 'dockerTool'
                 //tool 'dockerTool'
@@ -86,6 +87,8 @@ pipeline {
                 //sh 'systemctl unmask docker'
                 //sh 'systemctl enable docker'
                 //sh 'systemctl start docker'
+                 echo 'Should be after installation of missing docker ################'
+
             }
 
         }
