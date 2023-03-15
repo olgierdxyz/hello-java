@@ -67,38 +67,18 @@ pipeline {
             agent {
                 label 'deb'
             }
-
             tools {
-                //dockerTool 'docker-default'
                 dockerTool 'docker-deb'
             }
             steps {
-                //echo 'Should be before installation of missing docker ################'
-                //tool name: 'docker-default', type: 'docker'
-                //tool 'docker'
-                //tool name: 'docker-default', type: 'docker'             // it works
-                //tool name: 'docker', type: 'docker-default'
-                //tool name: 'docker-default', type: 'dockerTool'
-                //tool name: 'docker-default', type: 'dockerTool'
-                //tool 'dockerTool'
-                //tool 'docker-default'
-                //tool 'docker'   // working!
-                //tool 'myDocker'
-                //tool name: 'myDocker', type: 'dockerTool'
-                //sh 'systemctl unmask docker'
-                //sh 'systemctl enable docker'
-                //sh 'systemctl start docker'
                 sh 'docker --version'
-                //echo 'Should be after installation of missing docker ################'
-
             }
-
         }
 
         stage('Build with Docker') {
-            //tools {
-            //    dockerTool "my-docker-debian-11"
-            //}
+            tools {
+                dockerTool 'docker-deb'
+            }
             agent {
                 docker {
                     image 'gradle:latest'
