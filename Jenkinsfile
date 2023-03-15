@@ -59,7 +59,6 @@ pipeline {
             }
         }
         */
-        
 
         stage('Prepare environment') {
             agent {
