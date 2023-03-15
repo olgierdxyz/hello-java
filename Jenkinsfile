@@ -75,8 +75,10 @@ pipeline {
             steps {
                 echo 'Should be after installation of missing docker ################'
                 //tool name: 'docker-default', type: 'dockerTool'
+                tool name: 'docker-default', type: 'dockerTool'
+                //tool 'dockerTool'
                 //tool 'docker-default'
-                tool 'docker'   // working!
+                //tool 'docker'   // working!
                 //tool 'myDocker'
                 //tool name: 'myDocker', type: 'dockerTool'
                 //sh 'systemctl unmask docker'
