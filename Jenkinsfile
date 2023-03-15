@@ -67,12 +67,14 @@ pipeline {
             agent {
                 label 'deb'
             }
+            /*
             tools {
                 dockerTool 'docker-default'
             }
-
+            */
             steps {
                 echo 'Should be after installation of missing docker ################'
+                tool name: 'docker-default', type: 'dockerTool'
                 //tool 'docker-default'
                 //tool 'docker'   // working!
                 //tool 'myDocker'
