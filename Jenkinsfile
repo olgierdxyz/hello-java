@@ -66,7 +66,7 @@ pipeline {
             }
             steps {
                 tool name: 'Default', type: 'dockerTool'
-                sh 'systemctl start docker'
+                //sh 'systemctl start docker'
             }
         }
         stage('Build with Docker') {
