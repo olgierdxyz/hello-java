@@ -65,16 +65,15 @@ pipeline {
 
         stage('Prepare environment') {
             agent {
-                label 'deb'
+                label 'worker-debian-001'
             }
 
             tools {
                 //dockerTool 'docker-default'
                 dockerTool 'docker-default'
             }
-
             steps {
-                echo 'Should be before installation of missing docker ################'
+                //echo 'Should be before installation of missing docker ################'
                 //tool name: 'docker-default', type: 'docker'
                 //tool 'docker'
                 //tool name: 'docker-default', type: 'docker'             // it works
@@ -90,7 +89,7 @@ pipeline {
                 //sh 'systemctl enable docker'
                 //sh 'systemctl start docker'
                 sh 'docker --version'
-                echo 'Should be after installation of missing docker ################'
+                //echo 'Should be after installation of missing docker ################'
 
             }
 
