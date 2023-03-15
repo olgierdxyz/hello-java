@@ -65,7 +65,7 @@ pipeline {
 
         stage('Prepare environment') {
             agent {
-                label 'worker-debian-001'
+                label 'deb'
             }
 
             tools {
