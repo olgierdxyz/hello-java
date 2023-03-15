@@ -62,11 +62,12 @@ pipeline {
         }
         */
 
-        /*
+
         stage('Prepare environment') {
             agent {
                 label 'deb'
             }
+            /*
             steps {
                 tool 'docker'   // working!
                 //tool 'myDocker'
@@ -75,6 +76,7 @@ pipeline {
                 //sh 'systemctl enable docker'
                 //sh 'systemctl start docker'
             }
+            */
         }
         stage('Build with Docker') {
             //tools {
@@ -102,6 +104,6 @@ pipeline {
                 }
             }
         }
-        */
+
     }
 }
