@@ -33,15 +33,16 @@ pipeline {
             agent {
                 label 'deb'
             }
-            tools {
+            //tools {
             //    git 'git'
-                git 'git-default'
-            }
+            //    git 'git-default'
+            //}
             steps {
+                tool 'git-default'
                 git 'https://github.com/olgierdxyz/hello-html.git'
             }
         }
-        
+
         /*
         stage('Build') {
             steps {
@@ -61,6 +62,7 @@ pipeline {
         }
         */
 
+        /*
         stage('Prepare environment') {
             agent {
                 label 'deb'
@@ -100,6 +102,6 @@ pipeline {
                 }
             }
         }
-
+        */
     }
 }
