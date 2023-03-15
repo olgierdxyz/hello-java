@@ -75,7 +75,7 @@ pipeline {
             steps {
                 echo 'Should be after installation of missing docker ################'
                 //tool 'docker'
-                tool name: 'docker-default', type: docker
+                tool name: 'docker-default', type: 'docker'
                 //tool name: 'docker-default', type: 'dockerTool'
                 //tool name: 'docker-default', type: 'dockerTool'
                 //tool 'dockerTool'
