@@ -69,7 +69,8 @@ pipeline {
             }
 
             steps {
-                tool 'docker'   // working!
+                tool 'docker-default'
+                //tool 'docker'   // working!
                 //tool 'myDocker'
                 //tool name: 'myDocker', type: 'dockerTool'
                 //sh 'systemctl unmask docker'
