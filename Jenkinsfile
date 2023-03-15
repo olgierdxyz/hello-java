@@ -65,7 +65,8 @@ pipeline {
                 label 'deb'
             }
             steps {
-                tool name: 'Default', type: 'dockerTool'
+                echo 'Doing nothing'
+                //tool name: 'Default', type: 'dockerTool'
                 //sh 'systemctl start docker'
             }
         }
