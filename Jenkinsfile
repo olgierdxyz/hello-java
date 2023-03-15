@@ -70,7 +70,7 @@ pipeline {
 
             tools {
                 //dockerTool 'docker-default'
-                dockerTool 'docker-default'
+                dockerTool 'docker'
             }
             steps {
                 //echo 'Should be before installation of missing docker ################'
