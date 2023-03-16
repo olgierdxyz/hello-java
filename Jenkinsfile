@@ -3,11 +3,12 @@
 pipeline {
     agent none
     options {
-        timeout(time: 5, unit: 'MINUTES')
+        timeout(time: 1, unit: 'MINUTES')
         quietPeriod(0)
         retry(0)
         disableConcurrentBuilds abortPrevious: true
         buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5'))
+        skipStagesAfterUnstable()
         //timestamps()
         ansiColor('xterm')
     }
@@ -25,11 +26,13 @@ pipeline {
         //tool name: 'my-docker-debian-11', type: 'dockerTool'
         //tool name: 'my-docker-centos-8', type: 'dockerTool'
     //}
+    /*
     triggers {
         githubPush()
         //pollSCM('H H(3-5) * * *')
         //cron('H H(5-6) * * *')
     }
+    */
     stages {
         stage('Build') {
             agent {
