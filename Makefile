@@ -9,9 +9,9 @@ SRC_DIR := src
 # Define the build target
 .PHONY: build
 build:
-	./gradle build
+	gradle build
 
 # Define the clean target
 .PHONY: clean
 clean:
-	./gradle clean
+	gradle clean
