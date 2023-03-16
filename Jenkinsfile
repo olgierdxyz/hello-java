@@ -44,6 +44,7 @@ pipeline {
             }
             tools {
                 gradle "G8"
+                make "make-deb"
             }
             steps {
                 // Jenkinsfile is checked out separately via "Pipeline script from SCM"
