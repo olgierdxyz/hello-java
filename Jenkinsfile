@@ -31,7 +31,7 @@ pipeline {
         //cron('H H(5-6) * * *')
     }
     stages {
-        /*
+
         stage('Checkout') {
             agent {
                 label 'deb'
@@ -40,7 +40,8 @@ pipeline {
                 checkout scm
             }
         }
-        */
+
+        /*
         stage('Test git') {
             agent {
                 label 'deb'
@@ -54,7 +55,7 @@ pipeline {
                 git 'https://github.com/olgierdxyz/hello-html.git'
             }
         }
-
+        */
         /*
         stage('Build') {
             steps {
