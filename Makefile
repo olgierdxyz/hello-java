@@ -6,12 +6,13 @@ APP_NAME := myapp
 BUILD_DIR := build
 SRC_DIR := src
 
+# Define the clean target
+.PHONY: clean
+clean:
+	gradle clean
+
 # Define the build target
 .PHONY: build
 build:
 	gradle build
 
-# Define the clean target
-.PHONY: clean
-clean:
-	gradle clean
