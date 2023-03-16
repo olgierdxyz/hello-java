@@ -36,9 +36,11 @@ pipeline {
             agent {
                 label 'deb'
             }
+            /*
             steps {
                 checkout scm
             }
+            */
         }
 
         /*
