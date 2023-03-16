@@ -32,6 +32,9 @@ pipeline {
     }
     stages {
         stage('Checkout') {
+            agent {
+                label 'deb'
+            }
             steps {
                 checkout scm
             }
