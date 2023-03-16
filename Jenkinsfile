@@ -78,9 +78,11 @@ pipeline {
         }
 
         stage('Build with Docker') {
+            /*
             tools {
                 dockerTool 'docker-deb'
             }
+            */
             agent {
                 docker {
                     image 'gradle:latest'
