@@ -26,13 +26,13 @@ pipeline {
         //tool name: 'my-docker-debian-11', type: 'dockerTool'
         //tool name: 'my-docker-centos-8', type: 'dockerTool'
     //}
-    /*
+
     triggers {
         githubPush()
         //pollSCM('H H(3-5) * * *')
         //cron('H H(5-6) * * *')
     }
-    */
+
     //
     stages {
         stage('Build') {
