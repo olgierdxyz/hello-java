@@ -31,19 +31,18 @@ pipeline {
         //cron('H H(5-6) * * *')
     }
     stages {
-
-        stage('Checkout') {
+        stage('Build') {
             agent {
                 label 'deb'
-            }
-            steps {
-                echo 'Hello'
             }
             /*
             steps {
                 checkout scm
             }
             */
+            steps {
+                sh "gradle clean classes build"
+            }
         }
 
         /*
