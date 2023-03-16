@@ -49,7 +49,8 @@ pipeline {
                 // Jenkinsfile is checked out separately via "Pipeline script from SCM"
                 // Checks out entire repository (not only Jenkinsfile!)
                 checkout scm
-                sh "gradle clean classes build"
+                //sh "gradle clean classes build"
+                sh 'make build'
             }
         }
 
