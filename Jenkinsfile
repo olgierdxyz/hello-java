@@ -44,13 +44,13 @@ pipeline {
             }
             tools {
                 gradle "G8"
-                make "make-deb"
             }
             steps {
                 // Jenkinsfile is checked out separately via "Pipeline script from SCM"
                 // Checks out entire repository (not only Jenkinsfile!)
                 checkout scm
                 //sh "gradle clean classes build"
+                tool 'make-deb'
                 sh 'make build'
             }
         }
