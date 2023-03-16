@@ -31,6 +31,11 @@ pipeline {
         //cron('H H(5-6) * * *')
     }
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
 
         stage('Test git') {
             agent {
