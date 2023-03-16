@@ -4,9 +4,9 @@ pipeline {
     agent none
     options {
         timeout(time: 5, unit: 'MINUTES')
-        //quietPeriod(1)
+        quietPeriod(0)
         retry(0)
-        //disableConcurrentBuilds abortPrevious: true
+        disableConcurrentBuilds abortPrevious: true
         buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5'))
         //timestamps()
         ansiColor('xterm')
