@@ -7,7 +7,7 @@ pipeline {
         //quietPeriod(1)
         retry(0)
         //disableConcurrentBuilds abortPrevious: true
-        buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
+        buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5'))
         //timestamps()
         ansiColor('xterm')
     }
@@ -31,6 +31,7 @@ pipeline {
         //cron('H H(5-6) * * *')
     }
     stages {
+
         stage('Test git') {
             agent {
                 label 'deb'
@@ -64,7 +65,7 @@ pipeline {
         }
         */
 
-
+        /*
         stage('Prepare environment') {
             agent {
                 label 'deb'
@@ -78,11 +79,9 @@ pipeline {
         }
 
         stage('Build with Docker') {
-            /*
-            tools {
-                dockerTool 'docker-deb'
-            }
-            */
+            //tools {
+            //    dockerTool 'docker-deb'
+            //}
             agent {
                 docker {
                     image 'gradle:latest'
@@ -105,6 +104,6 @@ pipeline {
                 }
             }
         }
-
+        */
     }
 }
