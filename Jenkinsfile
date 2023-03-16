@@ -41,13 +41,13 @@ pipeline {
             tools {
                 gradle "G8"
             }
-            /*
+
             steps {
                 // Jenkinsfile is checkout separately via "Pipeline script from SCM"
                 // Checks out entire repository (not only Jenkinsfile!)
                 checkout scm
             }
-            */
+
             steps {
                 sh "gradle clean classes build"
             }
