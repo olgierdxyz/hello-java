@@ -35,6 +35,9 @@ pipeline {
             agent {
                 label 'deb'
             }
+            tools {
+                gradle "G8"
+            }
             /*
             steps {
                 checkout scm
