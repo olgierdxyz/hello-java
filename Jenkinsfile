@@ -36,6 +36,9 @@ pipeline {
             agent {
                 label 'deb'
             }
+            steps {
+                echo 'Hello'
+            }
             /*
             steps {
                 checkout scm
