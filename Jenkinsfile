@@ -58,7 +58,7 @@ pipeline {
 
                     sh 'pwd'
 
-                    def myExternalScript = libraryResource 'resources/test.sh'
+                    def myExternalScript = libraryResource 'resource/test.sh'
                     sh myExternalScript
                 }
 
