@@ -49,6 +49,8 @@ pipeline {
                     sh '''#!/usr/bin/perl
                     my $name = "Jenkins";
                     print "Hello, $name from Perl!\n";'''
+
+                    // Example of dealing with leading whitespaces for sensitive in this regard scripts, like Python:
                     sh '''\
                     #!/usr/bin/env /usr/bin/python3
                     name="Jenkins"
