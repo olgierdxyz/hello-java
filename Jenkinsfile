@@ -35,8 +35,8 @@ pipeline {
 
     //
     stages {
-        agent any
         stage('Test') {
+            agent any
             steps {
                 sh 'echo Hello'
             }
