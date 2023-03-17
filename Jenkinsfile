@@ -57,11 +57,13 @@ pipeline {
                     print('Hello {} from Python!'.format(name))'''.stripIndent()
 
                     sh 'pwd'
+                    @Library('mySharedLibrary')
 
-                    //def myExternalScript = libraryResource 'test.sh'
-                    //sh myExternalScript
+                    def myExternalScript = libraryResource 'test.sh'
+                    sh myExternalScript
                 }
-                sh "${libraryResource 'test.sh'}"
+
+                //sh "${libraryResource 'test.sh'}"
 
             }
         }
