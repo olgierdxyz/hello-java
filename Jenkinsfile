@@ -56,6 +56,8 @@ pipeline {
                     name="Jenkins"
                     print('Hello {} from Python!'.format(name))'''.stripIndent()
 
+                    sh 'pwd'
+
                     def myExternalScript = libraryResource 'test.sh'
                     sh myExternalScript
                 }
