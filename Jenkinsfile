@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent none
+    agent any
     options {
         timeout(time: 1, unit: 'MINUTES')
         quietPeriod(0)
@@ -41,7 +41,6 @@ pipeline {
             }
         }
         stage('Test') {
-            agent any
             steps {
                 //sh script: 'echo Hello', returnStdout: true
                 //sh script: 'ls -la /', returnStdout:true
