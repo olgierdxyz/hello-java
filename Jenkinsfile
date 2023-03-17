@@ -35,6 +35,13 @@ pipeline {
 
     //
     stages {
+        agent any
+        stage('Test') {
+            steps {
+                sh 'echo Hello'
+            }
+        }
+        /*
         stage('Build') {
             agent {
                 label 'deb'
@@ -54,6 +61,8 @@ pipeline {
                 sh 'make build'
             }
         }
+        */
+
         //
         /*
         stage('Test git') {
