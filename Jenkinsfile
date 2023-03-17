@@ -42,7 +42,7 @@ pipeline {
                 //sh script: 'ls -la /', returnStdout:true
                 script {
                     def listing = sh script: 'ls -la /', returnStdout:true
-
+                    echo listing
                 }
 
             }
