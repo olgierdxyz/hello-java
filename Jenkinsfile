@@ -41,7 +41,7 @@ pipeline {
                 //sh script: 'echo Hello', returnStdout: true
                 //sh script: 'ls -la /', returnStdout:true
                 script {
-                    def listing = sh script: 'ls -la /', returnStdout:true
+                    def listing = sh script: 'ls -la /', returnStdout:false
                     echo listing
                 }
 
