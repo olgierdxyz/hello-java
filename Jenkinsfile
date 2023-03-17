@@ -50,8 +50,8 @@ pipeline {
                     my $name = "Jenkins";
                     print "Hello, $name from Perl!\n";'''
                     sh '''#!/usr/bin/env /usr/bin/python3
-                    name="Jenkins"
-                    print('Hello {} from Python!'.format(name))'''
+name="Jenkins"
+print('Hello {} from Python!'.format(name))'''
                 }
 
             }
