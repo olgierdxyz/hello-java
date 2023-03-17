@@ -57,7 +57,7 @@ pipeline {
                     print('Hello {} from Python!'.format(name))'''.stripIndent()
 
                     sh 'pwd'
-                    @Library('mySharedLibrary')
+                    @Library('mySharedLibrary@master')
 
                     def myExternalScript = libraryResource 'test.sh'
                     sh myExternalScript
