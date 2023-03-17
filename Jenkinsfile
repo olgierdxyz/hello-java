@@ -41,8 +41,17 @@ pipeline {
                 //sh script: 'echo Hello', returnStdout: true
                 //sh script: 'ls -la /', returnStdout:true
                 script {
-                    def listing = sh script: 'ls -la /', returnStdout:false
+                    def listing = sh script: 'ls -la /', returnStdout:true
                     echo listing
+                }
+                script {
+                    sh 'export NAME=Jenkins; echo Hello, $NAME from shell!'
+                    sh '''#!/usr/bin/perl
+                    my $name = "Jenkins";
+                    print "Hello, $name from Perl!\n";'''
+                    sh '''#!/usr/bin/python
+                    name="Jenkins"
+                    print('Hello {} from Python!'.format(name))'''
                 }
 
             }
