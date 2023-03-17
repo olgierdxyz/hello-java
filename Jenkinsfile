@@ -57,7 +57,7 @@ pipeline {
                     print('Hello {} from Python!'.format(name))'''.stripIndent()
 
                     sh 'pwd'
-                    @Library('mySharedLibrary@master')
+                    @Library('mySharedLibrary')_
                     def myExternalScript = libraryResource 'test.sh'
                     sh myExternalScript
 
@@ -65,9 +65,10 @@ pipeline {
                     com.example.MyUtility.myMethod()
 
                     // Call the myStep() step
-                    def myTag = "my-tag-${UUID.randomUUID()}"
-                    def myVar = myStep(tagName: myTag)
-                    echo "Generated tag: ${myVar.MY_TAG}"
+                    //def myTag = "my-tag-${UUID.randomUUID()}"
+                    //def myVar = myStep(tagName: myTag)
+                    //echo "Generated tag: ${myVar.MY_TAG}"
+                    def myVar = myStep.call()
                 }
 
                 //sh "${libraryResource 'test.sh'}"
