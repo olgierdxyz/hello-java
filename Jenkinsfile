@@ -69,6 +69,7 @@ pipeline {
                     //def myVar = myStep(tagName: myTag)
                     //echo "Generated tag: ${myVar.MY_TAG}"
                     def myVar = myStep.call()
+                    echo "${myVar}"
                 }
 
                 //sh "${libraryResource 'test.sh'}"
