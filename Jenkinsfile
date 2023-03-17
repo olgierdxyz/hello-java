@@ -35,6 +35,11 @@ pipeline {
 
     //
     stages {
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('Test') {
             agent any
             steps {
