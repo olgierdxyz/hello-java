@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent any
+    agent deb
     options {
         timeout(time: 1, unit: 'MINUTES')
         quietPeriod(0)
