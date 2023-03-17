@@ -61,6 +61,7 @@ pipeline {
                     def myExternalScript = libraryResource 'test.sh'
                     sh myExternalScript
                 }
+                sh "${libraryResource 'test.sh'}"
 
             }
         }
