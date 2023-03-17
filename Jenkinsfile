@@ -58,9 +58,10 @@ pipeline {
 
                     sh 'pwd'
                     @Library('mySharedLibrary@master')
-
                     def myExternalScript = libraryResource 'test.sh'
                     sh myExternalScript
+
+                    myMethod
                 }
 
                 //sh "${libraryResource 'test.sh'}"
