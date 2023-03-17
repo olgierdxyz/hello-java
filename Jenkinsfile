@@ -38,7 +38,7 @@ pipeline {
         stage('Test') {
             agent any
             steps {
-                sh 'echo Hello'
+                sh script: 'echo Hello', returnStdout: true
             }
         }
         /*
