@@ -61,7 +61,13 @@ pipeline {
                     def myExternalScript = libraryResource 'test.sh'
                     sh myExternalScript
 
-                    myMethod
+                    // Call the MyUtility.myMethod() method
+                    com.example.MyUtility.myMethod()
+
+                    // Call the myStep() step
+                    def myTag = "my-tag-${UUID.randomUUID()}"
+                    def myVar = myStep(tagName: myTag)
+                    echo "Generated tag: ${myVar.MY_TAG}"
                 }
 
                 //sh "${libraryResource 'test.sh'}"
