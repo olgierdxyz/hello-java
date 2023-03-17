@@ -72,7 +72,7 @@ pipeline {
                     echo "${myVar}"
                 }
 
-                //sh "${libraryResource 'test.sh'}"
+                sh "${libraryResource 'test.sh'}"
 
             }
         }
