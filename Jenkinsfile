@@ -38,7 +38,8 @@ pipeline {
         stage('Test') {
             agent any
             steps {
-                sh script: 'echo Hello', returnStdout: true
+                //sh script: 'echo Hello', returnStdout: true
+                def listing = sh script: 'ls -la /', returnStdout:true
             }
         }
         /*
